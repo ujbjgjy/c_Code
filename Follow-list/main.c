@@ -1,82 +1,95 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+typedef struct Data
+{
+	char name[20];
+	int age;
+}Data;
 
 typedef struct Node
 {
-	int data;
+	Data data;
 	struct Node* next;
 }Node;
 
 Node* initlist()
 {
 	Node* list = (Node*)calloc(1, sizeof(Node));
-	list->next = list;//下个节点指向头节点
+	list->next =list;
 	return list;
 }
 
-void headinsert(Node* list, int data)
+void headinsert(Node* list, Data* data)
 {
 	Node* node = (Node*)malloc(sizeof(Node));
-	node->data = data;
+	node->data = *data;
 
-	node->next=list->next;
+	node->next = list->next;
 	list->next = node;
 }
 
-void tailinsert(Node* list, int data)
+void tailinsert(Node* list, Data* data)
 {
-	Node* ptr = list;
 	Node* node = (Node*)malloc(sizeof(Node));
-	node->data = data;
+	node->data = *data;
 	node->next = list;
-	while (list->next != ptr) list = list->next;
-	list->next = node;
+
+	Node* ptr = list;
+	while (ptr->next != list) ptr = ptr->next;
+	ptr->next = node;
 }
 
-void Delete(Node* list, int data)
+int Delete(Node* list, Data* data)
 {
 	Node* delnode = list->next;
 	while (delnode)
 	{
-		if (delnode->data == data)
+		if (strcmp(delnode->data.name, data->name) == 0)
 		{
-			//如果找到数据
-			//list下节点不在指向delnode
 			list->next = delnode->next;
 			free(delnode);
 			delnode = NULL;
-			return;
+			return 1;
 		}
 		list = delnode;
 		delnode = delnode->next;
 	}
-}
+	return 0;
 
-void printlist(Node* list)
+}//返回1表示已删除，0未删除
+
+void print(Node* list)
 {
-	Node* ptr = list;
-	while (ptr->next != list)
+	Node* ptr = list->next;
+	printf("%-20s %-5s\n", "名字", "年龄");
+	while (ptr != list)
 	{
+		printf("%-20s %-5d\n", ptr->data.name, ptr->data.age);
 		ptr = ptr->next;
-		printf("%d ", ptr->data);
 	}
-	printf("\n");
 }
 
 int main()
 {
 	Node* list = initlist();
-	headinsert(list, 1);
-	headinsert(list, 2);
-	headinsert(list, 3);
-	headinsert(list, 4);
-	headinsert(list, 5);
-	tailinsert(list, 6);
-	tailinsert(list, 7);
-	tailinsert(list, 8);
-	tailinsert(list, 9);
-	tailinsert(list, 10);
+	Data data = { "李白",45 };
+	headinsert(list, &data);
+	sscanf("张三 19", "%s %d", data.name, &(data.age));
+	headinsert(list, &data);
+	sscanf("熊二 13", "%s %d", data.name, &(data.age));
+	headinsert(list, &data);
+	sscanf("熊大 19", "%s %d", data.name, &(data.age));
+	headinsert(list, &data);
+	sscanf("李四 100", "%s %d", data.name, &(data.age));
+	tailinsert(list, &data);
+	sscanf("朱元璋 35", "%s %d", data.name, &(data.age));
+	tailinsert(list, &data);
+	sscanf("汉高祖 34", "%s %d", data.name, &(data.age));
+	tailinsert(list, &data);
 
-	printlist(list);
+
+	print(list, &data);
 	return 0;
 }
