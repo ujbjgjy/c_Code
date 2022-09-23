@@ -1,0 +1,5 @@
+﻿  main.c
+E:\C_Code\斗地主\main.c(47,8): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+E:\C_Code\斗地主\main.c(48,14): warning C4048: “int (*)[0]”和“int (*)[54]”数组的下标不同
+E:\C_Code\斗地主\main.c(49,18): warning C4048: “int (*)[0]”和“int (*)[54]”数组的下标不同
+  斗地主.vcxproj -> E:\C_Code\斗地主\x64\Debug\斗地主.exe
