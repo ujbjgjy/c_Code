@@ -1,5 +1,10 @@
-﻿  main.c
-E:\C_Code\斗地主\main.c(47,8): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-E:\C_Code\斗地主\main.c(48,14): warning C4048: “int (*)[0]”和“int (*)[54]”数组的下标不同
-E:\C_Code\斗地主\main.c(49,18): warning C4048: “int (*)[0]”和“int (*)[54]”数组的下标不同
+﻿  accomplish.c
+E:\C_Code\斗地主\accomplish.c(27,18): warning C4028: 形参 1 与声明不同
+E:\C_Code\斗地主\accomplish.c(135,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  main.c
+E:\C_Code\斗地主\main.c(6,8): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+E:\C_Code\斗地主\main.c(9,12): warning C4047: “函数”:“int **”与“int [3][18]”的间接级别不同
+E:\C_Code\斗地主\main.c(9,8): warning C4024: “rand_”: 形参和实参 1 的类型不同
+E:\C_Code\斗地主\main.c(17,17): warning C4048: “int (*)[8]”和“int [3][18]”数组的下标不同
+  正在生成代码...
   斗地主.vcxproj -> E:\C_Code\斗地主\x64\Debug\斗地主.exe

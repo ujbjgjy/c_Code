@@ -1,63 +1,65 @@
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
-
-int check_rand(int(*card)[], int i)
-{
-	int number = i;
-	while (i)
-	{
-		if ((*card)[i - 1] == (*card)[number])
-		{
-			return 0;
-		}
-		else
-		{
-			i--;
-		}
-	}
-	return 1;
-}
-
-void random(int(*card)[])
-{
-	int i = 0;
-	for (i = 0; i < 54;)
-	{
-		(*card)[i] = rand() % 54;
-		if (check_rand(card, i)) i++;
-	}
-}
-
-void print_card(int (*card)[],char* peopel)
-{
-	int i = 0, k = 0;
-	for (i = 0; i < 54; i++)
-	{
-		if (i % 18 == 0) printf("\n%c:	",*(peopel++));
-		printf("%2d ", (*card)[i]);
-	}
-}
-
-void sort_(int(*card)[])
-{
-	int i = 0, j = 0;
-
-
-
-}
+#include "head.h"
+void sort__(int(*card)[18]);
 
 int main()
 {
-	char people[4] = "abc";
-	int card[54] = { 0 };
 	srand(time(NULL));
-	random(&card);
+	int card[3][18] = { 0 };
+	//分牌
+	rand_(card, sizeof(card) / sizeof(card[0][0]));
+	//排序
+	sort_(card);
+	//打印
+	print(card,-1);
+	//抢地主
+	int n=grab(card);//抢地主并返回谁是地主  
+	//出牌
+	play_cards(card, n);
 
-	sort_(&card);
 
-	print_card(&card, people);
-
-
+	//printf("\n\n");
+	//int i, j;
+	//for ( i = 0; i < 3; i++)
+	//{
+	//	for ( j = 0; j < 18; j++)
+	//	{
+	//		printf("%d ", card[i][j]);
+	//	}
+	//}
 	return 0;
+}
+
+void sort__(int(*card)[18])
+{
+	int arr[54]={0};
+	int i, j,k=0;
+	for ( i = 0; i < 3; i++)
+	{
+		for ( j = 0; j < 18; j++)
+		{
+			arr[k] = card[i][j];
+			++k;
+		}
+	}
+	for (i = 0; i < 54 - 1; i++)
+	{
+		for ( k = 0;  k < 54-1-i; k++)
+		{
+			if (arr[k] > arr[k + 1])
+			{
+				int tmp = arr[k];
+				arr[k] = arr[k + 1];
+				arr[k + 1] = tmp;
+			}
+		}
+	}
+	k = 0;
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 18; j++)
+		{
+			card[i][j] = arr[k];
+			k++;
+		}
+	}
 }
