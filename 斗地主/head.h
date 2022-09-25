@@ -3,22 +3,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define A 0 //±íÊ¾×Ô¼º
+#define A 0 //è¡¨ç¤ºè‡ªå·±
 #define B 1
-#define C 2 //±íÊ¾µØÖ÷
+#define C 2 //è¡¨ç¤ºåœ°ä¸»
 
-//·ÖÅÆ
+//åˆ†ç‰Œ
 void rand_(int* card[18], int sum);
 
-//ÅÅĞò
+//æ’åº
 void sort_(int(*card)[18]);
 
-//´òÓ¡
+//æ‰“å°
 void print(int(*card)[18],int landlord);
-//landlord:0-a 1-b 2-c -1-Ã»ÓĞ,
+//landlord:0-a 1-b 2-c -1-æ²¡æœ‰,
 
-//ÇÀµØÖ÷
+//æŠ¢åœ°ä¸»
 int grab(int(*card)[18]);
 
-//³öÅÆ
-void play_cards(int (*card)[8],int n);
+//å‡ºç‰Œ
+void play_cards(int (*card)[18],int n);
