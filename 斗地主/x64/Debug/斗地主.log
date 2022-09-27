@@ -1,0 +1,15 @@
+﻿  accomplish.c
+E:\C_code\斗地主\head.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\C_code\斗地主\accomplish.c(27,18): warning C4028: 形参 1 与声明不同
+E:\C_code\斗地主\accomplish.c(145,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\C_code\斗地主\accomplish.c(179,18): warning C4047: “函数”:“const char *const ”与“char”的间接级别不同
+E:\C_code\斗地主\accomplish.c(179,15): warning C4024: “sscanf”: 形参和实参 1 的类型不同
+E:\C_code\斗地主\accomplish.c(179,20): warning C4477: “sscanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“int”
+E:\C_code\斗地主\accomplish.c(196,18): warning C4047: “函数”:“const char *const ”与“char”的间接级别不同
+E:\C_code\斗地主\accomplish.c(196,15): warning C4024: “sscanf”: 形参和实参 1 的类型不同
+E:\C_code\斗地主\accomplish.c(196,20): warning C4477: “sscanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“int”
+E:\C_code\斗地主\accomplish.c(166,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\C_code\斗地主\accomplish.c(179,5): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\C_code\斗地主\accomplish.c(196,5): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\C_code\斗地主\accomplish.c(212,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  斗地主.vcxproj -> E:\C_code\斗地主\x64\Debug\斗地主.exe
